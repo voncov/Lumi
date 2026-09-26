@@ -1,0 +1,22 @@
+name: License headers
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-license-headers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run license header check
+        env:
+          GITHUB_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          GITHUB_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          chmod +x scripts/check-license-headers.sh
+          scripts/check-license-headers.sh "$GITHUB_BASE_SHA" "$GITHUB_HEAD_SHA"
