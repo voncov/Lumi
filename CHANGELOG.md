@@ -1,5 +1,9 @@
 ## [unreleased]
 
+### 🚀 Features
+
+- *(license-check)* Added CI (license check) for PR
+
 ### 📚 Documentation
 
 - *(license)* Added LICENSE (GNU gpl-3.0)
@@ -8,6 +12,7 @@
 
 ### ⚙️ Miscellaneous Tasks
 
+- Update CHANGELOG.md
 - Update CHANGELOG.md
 - Update CHANGELOG.md
 - Update CHANGELOG.md
